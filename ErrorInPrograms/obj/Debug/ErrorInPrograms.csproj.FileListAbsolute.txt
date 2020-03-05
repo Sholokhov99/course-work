@@ -1,0 +1,6 @@
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\bin\Debug\ErrorInPrograms.dll
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\bin\Debug\ErrorInPrograms.pdb
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\obj\Debug\ErrorInPrograms.csprojAssemblyReference.cache
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\obj\Debug\ErrorInPrograms.csproj.CoreCompileInputs.cache
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\obj\Debug\ErrorInPrograms.dll
+C:\Users\Daniil\source\repos\Diploma2.0\ErrorInPrograms\obj\Debug\ErrorInPrograms.pdb

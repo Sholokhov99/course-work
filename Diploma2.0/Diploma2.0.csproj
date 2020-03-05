@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Diploma2._0</RootNamespace>
+    <AssemblyName>Diploma2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ksis-logo1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlPanel.designer.cs">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoToWondows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoToWondows.Designer.cs">
+      <DependentUpon>GoToWondows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoreTime.Designer.cs">
+      <DependentUpon>MoreTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMessage.Designer.cs">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPassword.Designer.cs">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingChild.Designer.cs">
+      <DependentUpon>SettingChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingParant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingParant.Designer.cs">
+      <DependentUpon>SettingParant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowImageList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowImageList.Designer.cs">
+      <DependentUpon>WindowImageList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlPanel.resx">
+      <DependentUpon>ControlPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoToWondows.resx">
+      <DependentUpon>GoToWondows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreTime.resx">
+      <DependentUpon>MoreTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMessage.resx">
+      <DependentUpon>NewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPassword.resx">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingChild.resx">
+      <DependentUpon>SettingChild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingParant.resx">
+      <DependentUpon>SettingParant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowImageList.resx">
+      <DependentUpon>WindowImageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9f848a91690735f2c8cd62ff3dd07698.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\changeUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hosts" />
+    <None Include="Resources\reboot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sleepMode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\offPc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\specIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Appearance\Appearance.csproj">
+      <Project>{250a2238-3c42-4d82-81fc-f646088f351b}</Project>
+      <Name>Appearance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorInPrograms\ErrorInPrograms.csproj">
+      <Project>{40b9865d-5511-4b0b-9727-427ff6cff9b1}</Project>
+      <Name>ErrorInPrograms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityModule\SecurityModule.csproj">
+      <Project>{4d13d6d6-f5db-4ddd-a3f9-31ffae957686}</Project>
+      <Name>SecurityModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlQueryProcessing\SqlQueryProcessing.csproj">
+      <Project>{024ef3bf-dfad-45e3-8007-805b8ccca6d9}</Project>
+      <Name>SqlQueryProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoChannelProcessing\VideoChannelProcessing.csproj">
+      <Project>{bd1f5bf4-c619-4f15-bdf9-56ecb5b79083}</Project>
+      <Name>VideoChannelProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoPlay\VideoPlay.csproj">
+      <Project>{df0d69e6-8a99-40a1-bcd8-a4f11141ebbc}</Project>
+      <Name>VideoPlay</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\841490_glasses_512x512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newUser1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left-Arrow-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrowhead-Down-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inf_RessetPassword.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_RessetPassword.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_FirstSteps.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_firststep_autenfication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_firststep_errorLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\angel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_menu_goToWindows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_menu_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_menu_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_menu_help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_menu_controlPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_Daniil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camera-01-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_setting_avatarUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_setting_colorprogram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_setting_fonProgram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_setting_fontEditor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_firststep_autenfication.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_firststep_errorLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_firststep_privateAccount.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ksis-logo1.ico" />
+    <None Include="Resources\info_hearingProblems.html" />
+    <None Include="Resources\info_deleteProgram.html" />
+    <None Include="Resources\info_updateProgram.html" />
+    <None Include="Resources\info_problemsAutenfication.html" />
+    <None Include="Resources\info_editSettingChild.html" />
+    <None Include="Resources\icon-save.png" />
+    <None Include="Resources\Click.wav" />
+    <None Include="Resources\LogOut.png" />
+    <None Include="Resources\Logout-128.png" />
+    <None Include="Resources\Message-Mail-128.png" />
+    <None Include="Resources\Check-256 %282%29.png" />
+    <None Include="Resources\Document-01-128.png" />
+    <None Include="Resources\Arrowhead-Left-01-128.png" />
+    <None Include="Resources\Arrowhead-Right-01-128.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

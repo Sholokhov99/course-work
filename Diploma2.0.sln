@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma2.0", "Diploma2.0\Diploma2.0.csproj", "{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appearance", "Appearance\Appearance.csproj", "{250A2238-3C42-4D82-81FC-F646088F351B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlQueryProcessing", "SqlQueryProcessing\SqlQueryProcessing.csproj", "{024EF3BF-DFAD-45E3-8007-805B8CCCA6D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityModule", "SecurityModule\SecurityModule.csproj", "{4D13D6D6-F5DB-4DDD-A3F9-31FFAE957686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorInPrograms", "ErrorInPrograms\ErrorInPrograms.csproj", "{40B9865D-5511-4B0B-9727-427FF6CFF9B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoChannelProcessing", "VideoChannelProcessing\VideoChannelProcessing.csproj", "{BD1F5BF4-C619-4F15-BDF9-56ECB5B79083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoPlay", "VideoPlay\VideoPlay.csproj", "{DF0D69E6-8A99-40A1-BCD8-A4F11141EBBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C6C8D6-76DC-4FD5-9F20-623ABBD2BAEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250A2238-3C42-4D82-81FC-F646088F351B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250A2238-3C42-4D82-81FC-F646088F351B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250A2238-3C42-4D82-81FC-F646088F351B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250A2238-3C42-4D82-81FC-F646088F351B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024EF3BF-DFAD-45E3-8007-805B8CCCA6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024EF3BF-DFAD-45E3-8007-805B8CCCA6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024EF3BF-DFAD-45E3-8007-805B8CCCA6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024EF3BF-DFAD-45E3-8007-805B8CCCA6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D13D6D6-F5DB-4DDD-A3F9-31FFAE957686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D13D6D6-F5DB-4DDD-A3F9-31FFAE957686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D13D6D6-F5DB-4DDD-A3F9-31FFAE957686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D13D6D6-F5DB-4DDD-A3F9-31FFAE957686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B9865D-5511-4B0B-9727-427FF6CFF9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B9865D-5511-4B0B-9727-427FF6CFF9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B9865D-5511-4B0B-9727-427FF6CFF9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B9865D-5511-4B0B-9727-427FF6CFF9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1F5BF4-C619-4F15-BDF9-56ECB5B79083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1F5BF4-C619-4F15-BDF9-56ECB5B79083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1F5BF4-C619-4F15-BDF9-56ECB5B79083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1F5BF4-C619-4F15-BDF9-56ECB5B79083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0D69E6-8A99-40A1-BCD8-A4F11141EBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0D69E6-8A99-40A1-BCD8-A4F11141EBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0D69E6-8A99-40A1-BCD8-A4F11141EBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0D69E6-8A99-40A1-BCD8-A4F11141EBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {081F7E04-37A2-4097-9B16-BCE660A59601}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+- Diploma2.0.exe.config
+- Папка х86 (SQLite.Interop.dll)
+- Appearance.dll
+- data.db
+- Diploma2.0.exe
+- Diploma2.0.exe.config
+- ErrorInPrograms.dll
+- SecurityModule.dll
+- SqlQueryProcessing.dll
+- System.Data.SQLite.dll

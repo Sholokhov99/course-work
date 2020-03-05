@@ -1,0 +1,14 @@
+D:\Диплом\Diploma2.0\VideoPlay\bin\Debug\VideoPlay.exe.config
+D:\Диплом\Diploma2.0\VideoPlay\bin\Debug\VideoPlay.exe
+D:\Диплом\Diploma2.0\VideoPlay\bin\Debug\VideoPlay.pdb
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.csprojAssemblyReference.cache
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\MainWindow.g.cs
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\App.g.cs
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay_MarkupCompile.cache
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay_MarkupCompile.lref
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\MainWindow.baml
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.g.resources
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.Properties.Resources.resources
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.csproj.GenerateResource.cache
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.exe
+D:\Диплом\Diploma2.0\VideoPlay\obj\Debug\VideoPlay.pdb

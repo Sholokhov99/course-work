@@ -1,0 +1,344 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using SqlQueryProcessing;
+using Appearance;
+
+namespace Diploma2._0
+{
+    public partial class GoToWondows : Form
+    {
+        #region Подключение к классам библиотек и объявление структур
+        Sql SQL = new Sql();
+
+        Form1 FORM1 = new Form1();
+        TempDataUser USERTEMP = new TempDataUser();
+
+        #endregion
+
+        //
+        //  Переменные
+        //
+        private bool isCloseFromProgram = false;
+        private int x = 0;                                                      // Координата курсора по оси X
+        private int y = 0;                                                      // Координата курсора по оси Y
+
+        private int _isReset = -1;
+
+        private float _sizeTime = 26.75F;
+        private float _sizeLeftTime = 21.75F;
+        private int _heightMenu { get; } = 36;
+        private bool _isCloseMenu = false;
+        private const int _hourInMinutes = 60;                                  // Минут в одном часу
+        //private Color _mainColor = StyleWindows._mainColor;                            // Основной цвет программы
+
+        struct TempDataUser
+        {
+            public string Login;
+            public string LastEnter;
+            public int ByDay;
+            public int Block;
+            public int TimeWorkPc;
+            public int AllTime;
+            public int TimeStart;
+            public int TimeEnd;
+        }
+
+        public GoToWondows()
+        {
+            InitializeComponent();
+
+            PositionUnfolding();
+            PositionTimeLeft();
+            PositionTime();
+        }
+
+        private void ChangeUser()
+        {
+            isCloseFromProgram = true;
+
+        }
+        public void SelectTimeCloseComputer(string login, int byDay)
+        {
+            if (byDay == 0)
+            {
+                // Если ограничение времени по времени в день
+                /*
+                    Возвращает значения
+                    TimeWorkPc, ByDay, Block, LastEnter, AllTime
+                 */
+                var data = SQL.SelectTimeUsers(login);
+
+                if (data.Count == 0)
+                {
+                    // Разлогин и пользователь не существует
+                }
+                else
+                {
+                    if (data.Count == 1)
+                    {
+                        // Разлогин и ошибка соединения
+                    }
+                    else
+                    {
+                        /*
+                         * TEMP
+                         */
+                        int temp_timeWorkPc = Convert.ToInt32(data[0]);
+                        int temp_byDay = Convert.ToInt32(data[1]);
+                        int temp_block = Convert.ToInt32(data[2]);
+                        string temp_lastEnter = data[3];
+                        int temp_allTime = Convert.ToInt32(data[4]);
+
+
+                        if (temp_block == 1)
+                        {
+                            // Разлогин, аккаунт заблокирован
+                        }
+                        else
+                        {
+                            if (temp_byDay == 1)
+                            {
+                                // Ограничение работы пк по дням недели
+                            }
+                            else
+                            {
+                                string nowData = DateTime.Now.ToShortDateString();
+                                if (nowData != temp_lastEnter)
+                                {
+                                    // Возвращение времени в начальное состояние
+                                }
+                                else
+                                {
+                                    // Обновление данных в БД
+                                    var codeOperation = SQL.UpdateTimeUser(login, temp_timeWorkPc--);
+                                    switch (codeOperation)
+                                    {
+                                        case 1:
+                                            // Обновления успешно вступили в силу
+                                            _time.Text = ConvertTime(temp_timeWorkPc);
+                                            PositionUnfolding();
+                                            PositionTimeLeft();
+                                            PositionTime();
+                                            break;
+                                        case 0:
+                                            // Разлогин и пользователь не найден
+                                            break;
+                                        case -1:
+                                            // Разлогин и возникла ошибка при подключении к БД
+                                            break;
+                                    }
+                                }
+                            }
+                        }// Если аккаунт не заблокирован
+                    }// Во время SQL запросе ошибок не возникло
+                }// Пользователь существует или возникла ошибка во время обращения
+            }
+        }
+
+        private void PositionUnfolding() => unfoldingPICTUREBOX.Location = new Point(Width / 2 - unfoldingPICTUREBOX.Width / 2, _menuFLP.Location.Y + _menuFLP.Height);
+        private void PositionTimeLeft() => _timeLeft.Location = new Point(Width / 2 - _timeLeft.Width / 2, unfoldingPICTUREBOX.Location.Y + unfoldingPICTUREBOX.Height + 2);
+        private void PositionTime() => _time.Location = new Point(Width / 2 - _time.Width / 2, _timeLeft.Location.Y + _timeLeft.Height);
+        //
+        //  Конвентирование оставшегося времени пользователя
+        //
+        public static string ConvertTime(int value)
+        {
+            int hour = value / _hourInMinutes;
+            int minute = value % _hourInMinutes;
+            string text = hour.ToString() + " ";
+            // Склонение записи часы
+            if (hour == 1 || hour == 21) text += "Час ";
+            else
+                if (hour > 1 && hour < 5 || hour == 23 || hour == 24) text += "Часа ";
+            else text += "Часов ";
+            // Склонение записи минуты
+            if (minute == 1 || minute == 21 || minute == 31 || minute == 41 || minute == 51) text += minute + " Минута";
+            else
+                if (minute > 1 && minute < 5 || minute > 22 && minute < 25 || minute > 31 && minute < 35 || minute > 41 && minute < 45 || minute > 51 && minute < 55)
+                text += minute + " Минут";
+            else
+                text += minute + " Минут";
+
+            return text;
+        }
+
+        private void unfoldingPICTUREBOX_Click(object sender, EventArgs e)
+        {
+            _isCloseMenu = (_menuFLP.Height == 0) ? false : true;
+            /*
+            if (_isCloseMenu)
+            {
+                _isCloseMenu = false;
+                unfoldingPICTUREBOX.BackgroundImage = Properties.Resources.Arrowhead_Up_128;
+            }
+            else
+            {
+                _isCloseMenu = true;
+                unfoldingPICTUREBOX.BackgroundImage = Properties.Resources.Arrowhead_Down_128;
+            }*/
+            _animation.Enabled = true;
+        }
+
+        #region Перемещение окна
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            x = e.X;
+            y = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point position = new Point(Cursor.Position.X - x, Cursor.Position.Y - y);
+                this.Location = position;
+            }
+        }
+        #endregion
+
+        private void _animation_Tick(object sender, EventArgs e)
+        {
+            float steep = 0.194F;
+            // Закрытие меню
+            if (_isCloseMenu)
+            {
+                if (_menuFLP.Height != 0)
+                {
+                    _menuFLP.Height--;
+                    PositionUnfolding();
+                    //_timeLeft
+                    _sizeLeftTime += steep;
+                    _timeLeft.Font = new Font("Calibri", _sizeLeftTime, FontStyle.Regular, GraphicsUnit.Point, 204);
+                    _timeLeft.Location = new Point(Width / 2 - _timeLeft.Width / 2, unfoldingPICTUREBOX.Location.Y + unfoldingPICTUREBOX.Height + 2);
+
+                    _sizeTime += steep;
+                    //
+                    _time.Font = new Font("Calibri", _sizeTime, FontStyle.Regular, GraphicsUnit.Point, 204);
+                    _time.Location = new Point(Width / 2 - _time.Width / 2, _time.Location.Y - 1);
+                    PositionTime();
+
+                }
+                else
+                    _animation.Enabled = false;
+            }
+            else
+            {
+                // Открытие меню
+                if (_menuFLP.Height != _heightMenu)
+                {
+                    _menuFLP.Height++;
+                    PositionUnfolding();
+
+                    _sizeLeftTime -= steep;
+                    _timeLeft.Font = new Font("Calibri", _sizeLeftTime, FontStyle.Regular, GraphicsUnit.Point, 204);
+                    _timeLeft.Location = new Point(Width / 2 - _timeLeft.Width / 2, unfoldingPICTUREBOX.Location.Y + unfoldingPICTUREBOX.Height + 2);
+
+                    _sizeTime -= steep;
+                    //
+                    _time.Font = new Font("Calibri", _sizeTime, FontStyle.Regular, GraphicsUnit.Point, 204);
+                    PositionTime();
+                }
+                else
+                    _animation.Enabled = false;
+
+            }
+        }
+        
+        //
+        //  Отслеживание оставшегося времени пользователя
+        //
+        private void _trackTime_Tick(object sender, EventArgs e)
+        {
+            /*
+            // Получение данных из базы
+            var data = SQL.SelectTimeUsers(Form1._Login, Form1._Online);
+            if (data.Count == 0)
+            {
+                // Разлогин и пользователь не существует
+                MessageBox.Show("Пользователь не существует");
+            }
+            else
+            if (data.Count == 1)
+            {
+                // Разлогин и ошибка соединения
+                MessageBox.Show(Class1._errorConnect, "Ошибка соединения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _isReset = 1;
+                this.Close();
+            }
+            else
+            if (Convert.ToInt32(data[0]) <= 0 || Convert.ToBoolean(data[1]))
+            {
+                // Время вышло
+                _isReset = 0;
+                this.Close();
+            }
+            else
+            {
+                // Сохранение данных в базу данных
+                var saveData = SQL.SaveTimeUser(Convert.ToInt32(data[0]), Form1._Login, Form1._Online);
+                switch (saveData.Count())
+                {
+                    case 1:
+                        _time.Text = ConvertTime(Convert.ToInt32(saveData[0]));
+                        PositionTime();
+                        Form1._TimeWorkPC = Convert.ToInt32(saveData[0]);
+                        break;
+                    case 2:
+                        // Разлогин и вывод ошибки подключения
+                        MessageBox.Show("Error Timer!");
+                        break;
+                }
+            }*/
+        }
+
+        private void WindowTimerChild_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            /*switch (_isReset)
+            {
+                // Была закрыта не по запланированному сценарию
+                case -1:
+                    MessageBox.Show("Ошибка -1");
+                    Application.Exit();
+                    break;
+                // Переход в меню пользователя
+                case 0:
+                    this.Hide();
+                    GC.Collect();
+                    FORM1.CustomSettings();
+                    FORM1.Show();
+                    break;
+                // Переход на форму авторизации
+                case 1:
+                    FORM1.ClearingUserDataFromProgramCache();
+                    this.Hide();
+                    FORM1.Show();
+                    break;
+            }*/
+        }
+        //
+        //  Разлогин пользователя
+        //
+        private void _сhangeUser_Click(object sender, EventArgs e)
+        {
+            ChangeUser();
+            /*_isReset = 1;
+
+            this.Close();*/
+        }
+        //
+        //  Вернуться в меню настроек
+        //
+        private void _back_Click(object sender, EventArgs e)
+        {
+            /*_isReset = 0;
+            this.Close();*/
+        }
+    }
+}

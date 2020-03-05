@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="3ce2baff-3e5f-44f2-84f5-7e453e537be1" ChangeDateTime="04/03/2019 09:22:04">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Login" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7074ba85-a01f-4414-9f67-2be92a348e09" ChangeDateTime="04/03/2019 09:23:27">
+    <Property Name="ElementName" Value="[dbo].[Table1].[f]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Patronymic" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ac936997-14f8-4d76-a288-58499c81bd8c" ChangeDateTime="04/03/2019 09:25:22">
+    <Property Name="ElementName" Value="[dbo].[Table1].[HP]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HPMaxVolume" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fbda1180-e5ba-464a-b9d1-eeed54c8e4fd" ChangeDateTime="04/03/2019 09:25:30">
+    <Property Name="ElementName" Value="[dbo].[Table1].[HPMaxVolume]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HP_MaxVolume" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b71990d1-a6dd-4545-b8a2-4a7cf8500b7c" ChangeDateTime="04/03/2019 09:25:36">
+    <Property Name="ElementName" Value="[dbo].[Table1].[HP]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HP_" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5416ed4d-d21a-4fee-a714-22a48d3164fc" ChangeDateTime="04/03/2019 09:30:53">
+    <Property Name="ElementName" Value="[dbo].[Table1].[HP_]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HP_problemsWidth" />
+  </Operation>
+</Operations>
